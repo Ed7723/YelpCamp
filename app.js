@@ -21,6 +21,9 @@ app.get('/', (req,res)=>{
     res.render('Home')
 })
 
+app.get('/campgrouds/:id',async(req,res)=>{
+    res.render('campgrounds/show')
+})
 app.get('/campground', async(req,res)=>{
     const camgrounds = await Campground.find({});
     res.render('campgrounds/index', {campgrounds})
