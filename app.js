@@ -49,7 +49,11 @@ app.get('/campground', async(req,res)=>{
 app.listen(3000, ()=>{
     console.log('Serving on port 3000')
 })
-
+app.delete('/campgrounds/id',async(req,res)=>{
+    const { id } = req.params;
+    await Campground.findByIdAndDelete(id);
+    res.redirect('/campgrounds');
+})
 app.put(`/campgrounds/:id`,async(req,res)=>{
     const {id} = req.params;
     const campground = await Campground.findByIdAndUpdate(id, {...req.body.campground})
