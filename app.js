@@ -42,7 +42,7 @@ app.get(`/campgrounds/:id/edit`, async(req,res)=>{
 })
 
 app.get('/campground', async(req,res)=>{
-    const camgrounds = await Campground.find({});
+    const campgrounds = await Campground.find({});
     res.render('campgrounds/index', {campgrounds})
 })
 
