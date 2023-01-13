@@ -26,7 +26,7 @@ router.post('/',validateReview, catchAsync(async(req,res)=>{
     res.redirect(`/campgrounds/${campground._id}`);
 }))
 
-router.delete('/reviewId',catchAsync(async(req,res)=>{
+router.delete('/:reviewId',catchAsync(async(req,res)=>{
     const{id,reviewId} = req.params;
     await Campground.findByIdAndUpdate(id,{$pull:{reviews:reviewId}})
     await Review.findByIdAndDelete(reviewId);
