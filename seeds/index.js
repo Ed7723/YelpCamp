@@ -12,7 +12,7 @@ const db = mongoose.connection;
 db.on("error",console.error.bind(console,"connection error:"));
 db.once("open", ()=>{
     console.log("Database connected");
-});
+});9
 const sample = array => array[Math.floor(Math.random()*array.length)];
 
 //This function essentially uses the unsplash API and gets the image link using a GET request
@@ -39,6 +39,7 @@ const seedDB = async() =>{
         const price = Math.floor(Math.random()*30) + 10;
         const images = await seedImg();
         const camp = new Campground({
+            author: '63c33e6c7c3a86aea6132180',
             image : images,
             location:`${cities[random1000].city}, ${cities[random1000].state}`,
             title:`${sample(descriptors)} ${sample(places)}`,
