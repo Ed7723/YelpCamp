@@ -40,7 +40,10 @@ const seedDB = async() =>{
         const images = await seedImg();
         const camp = new Campground({
             author: '63c33e6c7c3a86aea6132180',
-            image : images,
+            images : [{
+                url:'',
+                filename:''
+            }],
             location:`${cities[random1000].city}, ${cities[random1000].state}`,
             title:`${sample(descriptors)} ${sample(places)}`,
             description: "Random description",
