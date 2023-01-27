@@ -1,5 +1,3 @@
-const express = require('express')
-const path = require('path')
 const mongoose = require('mongoose')
 const cities = require('./cities')
 const Campground = require('../models/campground')
@@ -40,10 +38,16 @@ const seedDB = async() =>{
         const images = await seedImg();
         const camp = new Campground({
             author: '63c33e6c7c3a86aea6132180',
-            images : [{
-                url:'',
-                filename:''
-            }],
+            images : [
+                {
+                  url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1674778609/YelpCamp/jddytiqwgmcwskzdhyxo.jpg',
+                  filename: 'YelpCamp/jddytiqwgmcwskzdhyxo',
+                },
+                {
+                  url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1674778609/YelpCamp/mkogeaaugnwcdbswwks7.jpg',
+                  filename: 'YelpCamp/mkogeaaugnwcdbswwks7',
+                }
+              ],
             location:`${cities[random1000].city}, ${cities[random1000].state}`,
             title:`${sample(descriptors)} ${sample(places)}`,
             description: "Random description",
