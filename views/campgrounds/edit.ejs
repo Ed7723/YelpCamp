@@ -1,4 +1,5 @@
 <% layout('./layouts/boilerplate')-%>
+<link rel="stylesheet" href="/stylesheets/images.css">
     <div class="row">
         <h1 class = "text-center">Edit Campground</h1>
         <div class="col-6 offset-3">
@@ -13,18 +14,12 @@
                     <input class = "form-control" type="text" id="location" name = "campground[location]" value = "<%=campground.location%>" required>
                     <div class="invalid-feedback">Please enter a location</div>
                 </div>
-                <div class = "mb-3">
-                    <label class = "form-label" for="image">Image URL</label>
-                    <input type="file" name = "image" id = "image" multiple>
-                    <div class="invalid-feedback">Please enter an URL</div>
-                </div>
                 <div class="mb-3">
-                    <label class = "form-label" for="price">Campground Price</label>
-                    <div class="input-group">
-                        <span class="input-group-text" id="price-label">$</span>
-                        <input type="text" class="form-control" id = "price" placeholder="0.00" aria-label="price" aria-describedby="price-label" name = campground[price] value = "<%=campground.price%>" required>
-                        <div class="invalid-feedback">Please enter a price</div>
-                     </div>
+                    <label class="form-label">Choose Image(s)</label>
+                    <div class="form-file custom-file">
+                        <input class="form-control custom-file-input" type="file" id="image" name = "image" multiple onchange="previewMultiple(event)">
+                    </div>
+                    <div id = "formFile"></div>
                 </div>
                 <div class = "mb-3">
                     <label class = "form-label" for="description">Description</label>
@@ -33,6 +28,14 @@
                 </div>
                 <div class="mb-3">
                     <button class = "btn btn-info">Update Campground</button>
+                </div>
+                <div class="mb-3">
+                    <label class = "form-label" for="price">Campground Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" id = "price" placeholder="0.00" aria-label="price" aria-describedby="price-label" name = campground[price] value = "<%=campground.price%>" required>
+                        <div class="invalid-feedback">Please enter a price</div>
+                     </div>
                 </div>
             </form>
             <a href="/campgrounds/<%= campground._id %>">Back To Campgrounds</a>
