@@ -41,7 +41,11 @@ const seedDB = async() =>{
             author: '63c33e6c7c3a86aea6132180',
             geometry:{
                 "type" : "Point" ,
-                "coordinates":[-113.1331,47.0202]},
+                "coordinates":[
+                    cities[random1000].longitude,
+                    cities[random1000].latitude,
+                ]
+            },
             images : [
                 {
                   url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1675283907/YelpCamp/bzwx0anmfmqdianqquak.jpg',
