@@ -44,12 +44,12 @@ const seedDB = async() =>{
                 "coordinates":[-113.1331,47.0202]},
             images : [
                 {
-                  url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1674778609/YelpCamp/jddytiqwgmcwskzdhyxo.jpg',
-                  filename: 'YelpCamp/jddytiqwgmcwskzdhyxo',
+                  url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1675283907/YelpCamp/bzwx0anmfmqdianqquak.jpg',
+                  filename: 'YelpCamp/bzwx0anmfmqdianqquak',
                 },
                 {
-                  url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1674778609/YelpCamp/mkogeaaugnwcdbswwks7.jpg',
-                  filename: 'YelpCamp/mkogeaaugnwcdbswwks7',
+                  url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1675295354/YelpCamp/x3hzccck7mnzan82mola.jpg',
+                  filename: 'YelpCamp/x3hzccck7mnzan82mola',
                 }
               ],
             location:`${cities[random1000].city}, ${cities[random1000].state}`,
