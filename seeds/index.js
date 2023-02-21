@@ -3,6 +3,7 @@ const cities = require('./cities')
 const Campground = require('../models/campground')
 const {places,descriptors} = require('./seedhelpers')
 const { default: axios } = require('axios')
+require('dotenv').config();
 mongoose.connect('mongodb://localhost:27017/yelp-camp',{
 });
 
@@ -20,7 +21,7 @@ async function seedImg(){
     try{
         const resp = await axios.get('https://api.unsplash.com/photos/random',{
             params:{
-                client_id: '',
+                client_id: process.env.UNSPLASH_ID,
                 collections: 483251,
             },
         })
@@ -38,6 +39,9 @@ const seedDB = async() =>{
         const images = await seedImg();
         const camp = new Campground({
             author: '63c33e6c7c3a86aea6132180',
+            geometry:{
+                "type" : "Point" ,
+                "coordinates":[-113.1331,47.0202]},
             images : [
                 {
                   url: 'https://res.cloudinary.com/dzsvvrwtd/image/upload/v1674778609/YelpCamp/jddytiqwgmcwskzdhyxo.jpg',
